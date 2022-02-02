@@ -110,11 +110,11 @@ app.use((error, req, res, next) => {
     isAuthenticated: req.session.isLoggedIn
   });
 });
-
+var port=process.env.port ||3000 ;
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    app.listen(3000);
+    app.listen(port);
   })
   .catch(err => {
     console.log(err);
