@@ -11,7 +11,7 @@ const multer = require('multer');
 
 const errorController = require('./controllers/error');
 const User = require('./models/user');
-var port=process.env.port ||3000 ;
+var port=process.env.PORT ||3000 ;
 const MONGODB_URI =
   'mongodb+srv://admin-surya:test123@cluster0.gyvop.mongodb.net/new';
 
