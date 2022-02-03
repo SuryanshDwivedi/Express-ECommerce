@@ -11,7 +11,7 @@ const multer = require('multer');
 
 const errorController = require('./controllers/error');
 const User = require('./models/user');
-
+var port=process.env.port ||3000 ;
 const MONGODB_URI =
   'mongodb+srv://admin-surya:test123@cluster0.gyvop.mongodb.net/new';
 
@@ -110,11 +110,11 @@ app.use((error, req, res, next) => {
     isAuthenticated: req.session.isLoggedIn
   });
 });
-var port=process.env.port ||3000 ;
+
 mongoose
   .connect(MONGODB_URI)
   .then(result => {
-    app.listen(port);
+    app.listen(`${port}`);
   })
   .catch(err => {
     console.log(err);
